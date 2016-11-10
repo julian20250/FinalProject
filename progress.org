@@ -1,17 +1,17 @@
 ** TODO Programas en C++ y Python [0%]
    DEADLINE: <2016-11-21 lun>
-   + [ ] Programa en C++, no olvidar al correr guardar los resultados [0%].
-     1. [ ] Implementar la estructura célula [0%]
-	1. [ ] Atributos [0%]:
-	   - [ ] Crear Atributo entero que indique la dirección del movimiento (1=arriba, 2=derecha, etc.)
-	   - [ ] Crear Atributo X e Y que indiquen la posición actual.
-	   - [ ] Atributo entero que diga si la célula está infectada, susceptible o removido. (S=1, I=2, R=3).
-	2. [ ] Métodos [0%]
+   + [-] Programa en C++, no olvidar al correr guardar los resultados [0%].
+     1. [-] Implementar la estructura célula [50%]
+	1. [X] Atributos [100%]:
+	   - [X] Crear Atributo entero que indique la dirección del movimiento (1=arriba, 2=derecha, etc.)
+	   - [X] Crear Atributo X e Y que indiquen la posición actual.
+	   - [X] Atributo entero que diga si la célula está infectada, susceptible o removido. (S=1, I=2, R=3).
+	2. [-] Métodos [25%]
 	   * [ ] Hacer que se mueva la célula a cualquier lado (la probabilidad de moverse a un lado 
 	    determinado es la misma para todos los lados.
 	   * [ ] Si la célula se encuentra infectada, determinar en una iteración dada con la probabilidad dada
 	     si pasa a ser removido o no.
-	   * [ ] Hacer que la célula rote; puede rotar a cualquier lado con igual probabilidad.
+	   * [X] Hacer que la célula rote; puede rotar a cualquier lado con igual probabilidad.
 	   * [ ] Hay que evitar que la célula se salga de los límites del mapa.
    
      2. [ ] Funciones Globales [0%]
