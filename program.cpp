@@ -6,7 +6,7 @@ const double pInm=.4; //probability of surpass infection
 const int boundaries=200; //boundariesXboundaries (size of map)
 const int initialInfected=15;
 const double r=0.00218;//probability of get infected by one infected
-const int iterations=10;
+const int iterations=50;
 //DIR:
 //1: North, 2: East, 3: South, 4: West.
 //SIR:
