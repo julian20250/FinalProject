@@ -1,6 +1,6 @@
-** TODO Programas en C++ y Python [0%]
+** TODO Programas en C++ y Python [66%]
    DEADLINE: <2016-11-21 lun>
-   + [-] Programa en C++, no olvidar al correr guardar los resultados [50%].
+   + [X] Programa en C++, no olvidar al correr guardar los resultados [100%].
      1. [X] Implementar la estructura célula [100%]
 	1. [X] Atributos [100%]:
 	   - [X] Crear Atributo entero que indique la dirección del movimiento (1=arriba, 2=derecha, etc.)
@@ -23,17 +23,19 @@
 	* [X] Función que coloque a todas las células uniformemente en la malla bidimensional (arranque).
 	* [X] Función que haga que M células se infecten aleatoriamente, con M el número de infectados inicial
       
-     3. [-] Variables Globales [75%]
+     3. [X] Variables Globales [100%]
 	* [X] Número N para hacer la malla bidimensional NxN.
 	* [X] Población inicial susceptible.
 	* [X] Población inicial enferma.
-	* [ ] Probabilidad de volverse inmune (después hay que adecuar esto para cambiarlo con for).
+	* [X] Probabilidad de volverse inmune (después hay que adecuar esto para cambiarlo con for).
      
-     4. [ ] cout<< el tiempo transcurrido, número de susceptibles, de infectados y de removidos.
+     4. [X] cout<< el tiempo transcurrido, número de susceptibles, de infectados y de removidos.
 	   
       
-   + [ ] Programa en Python [0%].
-     * [ ] Recibir los datos provenientes del archivo de texto.
-     * [ ] Graficar.
-     * [ ] Tener pendiente que después toca graficar la población susceptible final contra la probabilidad
+   + [X] Programa en Python [100%].
+     * [X] Recibir los datos provenientes del archivo de texto.
+     * [X] Graficar.
+     * [X] Tener pendiente que después toca graficar la población susceptible final contra la probabilidad
        de curarse.
+   
+   + [ ] Hacer el artículo.
