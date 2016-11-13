@@ -1,32 +1,32 @@
 ** TODO Programas en C++ y Python [0%]
    DEADLINE: <2016-11-21 lun>
-   + [-] Programa en C++, no olvidar al correr guardar los resultados [0%].
-     1. [-] Implementar la estructura célula [50%]
+   + [-] Programa en C++, no olvidar al correr guardar los resultados [50%].
+     1. [X] Implementar la estructura célula [100%]
 	1. [X] Atributos [100%]:
 	   - [X] Crear Atributo entero que indique la dirección del movimiento (1=arriba, 2=derecha, etc.)
 	   - [X] Crear Atributo X e Y que indiquen la posición actual.
 	   - [X] Atributo entero que diga si la célula está infectada, susceptible o removido. (S=1, I=2, R=3).
-	2. [-] Métodos [25%]
-	   * [ ] Hacer que se mueva la célula a cualquier lado (la probabilidad de moverse a un lado 
+	2. [X] Métodos [100%]
+	   * [X] Hacer que se mueva la célula a cualquier lado (la probabilidad de moverse a un lado 
 	    determinado es la misma para todos los lados.
-	   * [ ] Si la célula se encuentra infectada, determinar en una iteración dada con la probabilidad dada
+	   * [X] Si la célula se encuentra infectada, determinar en una iteración dada con la probabilidad dada
 	     si pasa a ser removido o no.
 	   * [X] Hacer que la célula rote; puede rotar a cualquier lado con igual probabilidad.
-	   * [ ] Hay que evitar que la célula se salga de los límites del mapa.
+	   * [X] Hay que evitar que la célula se salga de los límites del mapa.
    
-     2. [ ] Funciones Globales [0%]
-	* [ ] Función que determina cuántas celulas infectadas hay al lado de ella para calcular si se convertirá
+     2. [X] Funciones Globales [100%]
+	* [X] Función que determina cuántas celulas infectadas hay al lado de ella para calcular si se convertirá
 	  en una célula infectada o no (en caso de que la susodicha sea susceptible).
-	* [ ] Función que mueve todas las células.
-	* [ ] Función que rota todas las células.
-	* [ ] Función que cure a todas las células infectadas con el método de la estructura célula
-	* [ ] Función que coloque a todas las células uniformemente en la malla bidimensional (arranque).
-	* [ ] Función que haga que M células se infecten aleatoriamente, con M el número de infectados inicial
+	* [X] Función que mueve todas las células.
+	* [X] Función que rota todas las células.
+	* [X] Función que cure a todas las células infectadas con el método de la estructura célula
+	* [X] Función que coloque a todas las células uniformemente en la malla bidimensional (arranque).
+	* [X] Función que haga que M células se infecten aleatoriamente, con M el número de infectados inicial
       
-     3. [ ] Variables Globales [0%]
-	* [ ] Número N para hacer la malla bidimensional NxN.
-	* [ ] Población inicial susceptible.
-	* [ ] Población inicial enferma.
+     3. [-] Variables Globales [75%]
+	* [X] Número N para hacer la malla bidimensional NxN.
+	* [X] Población inicial susceptible.
+	* [X] Población inicial enferma.
 	* [ ] Probabilidad de volverse inmune (después hay que adecuar esto para cambiarlo con for).
      
      4. [ ] cout<< el tiempo transcurrido, número de susceptibles, de infectados y de removidos.
