@@ -1,11 +1,12 @@
 #include <iostream>
 #include <random>
-
-const int N=1; // number of cells
+#include <fstream>
+const int N=16000; // number of cells
 const double pInm=.4; //probability of surpass infection
 const int boundaries=200; //boundariesXboundaries (size of map)
-const int inicialInfected=15;
+const int initialInfected=15;
 const double r=0.00218;//probability of get infected by one infected
+const int iterations=10;
 //DIR:
 //1: North, 2: East, 3: South, 4: West.
 //SIR:
@@ -25,12 +26,28 @@ void start(Cell cells[]);
 void infected(Cell cells[]);
 void howManyInf(Cell cells[], int infectedSurrounding[]);
 void infectSafe(Cell cells[]);
+void countAll(Cell cells[], int Number[]);
 
 int main(void){
+  std::ofstream outfile;
+  outfile.open("data.txt");
   Cell cells[N];
   std::default_random_engine generator;
-  cells[0].rotateCell();
-  std::cout<< cells[0].dir<<std::endl;
+  start(cells);
+  infected(cells);
+  int Number[]={N-initialInfected, initialInfected, 0};
+  outfile<<"0"<<"\t"<<N-initialInfected<<"\t"<<initialInfected<<"\t"<<"0"<<std::endl;
+  for(int ii=0; ii<iterations; ii++){
+    moveAllCells(cells);
+    infectSafe(cells);
+    cureCells(cells);
+
+    countAll(cells, Number);
+    outfile<<ii+1<<"\t"<<Number[0]<<"\t"<<Number[1]<<"\t"<<Number[2]<<std::endl;
+    std::cout << "Ended iteration "<<ii+1<<"\r"<<std::flush;  
+  }
+  outfile.close();
+  return 0;
 }
 
 int randomIntGenerator(int low, int high){
@@ -105,7 +122,7 @@ void infected(Cell cells[]){
   std::random_device rd;
   std::mt19937 gen(rd());
   std::uniform_int_distribution<> dis(0, N-1);
-  for(int ii=0; ii<inicialInfected; ii++ ){
+  for(int ii=0; ii<initialInfected; ii++ ){
     int ram=dis(gen);
     if (cells[ram].SIR!=2)
       cells[ram].SIR=2;
@@ -119,12 +136,13 @@ void howManyInf(Cell cells[], int infectedSurrounding[]){
     int is=0;
     if(cells[ii].SIR==1)
       for(int jj=0; jj<N; jj++){
-	if((cells[ii].X==cells[jj].X && cells[ii].Y==cells[jj].Y && cells[jj].SIR==2) ||
-	   (cells[ii].X+1==cells[jj].X && cells[ii].Y==cells[jj].Y && cells[jj].SIR==2) ||
-	   (cells[ii].X==cells[jj].X && cells[ii].Y+1==cells[jj].Y && cells[jj].SIR==2) ||
-	   (cells[ii].X-1==cells[jj].X && cells[ii].Y==cells[jj].Y && cells[jj].SIR==2) ||
-	   (cells[ii].X==cells[jj].X && cells[ii].Y-1==cells[jj].Y && cells[jj].SIR==2))
-	  is++;
+	if(cells[jj].SIR==2)
+	  if((cells[ii].X==cells[jj].X && cells[ii].Y==cells[jj].Y ) ||
+	     (cells[ii].X+1==cells[jj].X && cells[ii].Y==cells[jj].Y ) ||
+	     (cells[ii].X==cells[jj].X && cells[ii].Y+1==cells[jj].Y ) ||
+	     (cells[ii].X-1==cells[jj].X && cells[ii].Y==cells[jj].Y ) ||
+	     (cells[ii].X==cells[jj].X && cells[ii].Y-1==cells[jj].Y ))
+	    is++;
       }
     infectedSurrounding[ii]=is;
   }
@@ -138,3 +156,16 @@ void infectSafe(Cell cells[]){
 	cells[ii].SIR=2;
   
 }
+
+ void countAll(Cell cells[], int Number[]){
+   Number[0]=0; Number[1]=0; Number[2]=0;
+   for(int ii=0; ii<N; ii++){
+     int value=cells[ii].SIR;
+     if(value==1)
+       Number[0]++;
+     else if(value==2)
+       Number[1]++;
+     else
+       Number[2]++;       
+   }
+ }
