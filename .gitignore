@@ -1,4 +1,8 @@
 *.out
 *.txt
 *~
-run
+\run*
+\exec*
+*.gz
+*.log
+*.aux
