@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Resumen}{3}{0}{1}
+\beamer@sectionintoc {2}{Introducci\IeC {\'o}n}{4}{0}{2}
+\beamer@sectionintoc {3}{Algoritmo y C\IeC {\'o}digo}{5}{0}{3}
+\beamer@sectionintoc {4}{Resultados}{6}{0}{4}
+\beamer@sectionintoc {5}{Conclusiones}{9}{0}{5}
